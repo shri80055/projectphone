@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>slider range</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link href="bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="H:\bootsite\sort\css\jquery-ui-1.10.4.custom.css">
+	    <script type="text/javascript" src="H:\bootsite\sort\js\jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="H:\bootsite\sort\js\jquery-ui-1.10.4.custom.js"></script>
+        <script type="text/javascript">
+            $( function() {
+      $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 10000,
+        values: [ 1000, 2000 ],
+        step: 100,
+  
+        slide: function( event, ui ) {
+          $( "#amount" ).val( "Rs" + ui.values[ 0 ] + " - Rs" + ui.values[ 1 ] );
+        }
+  
+      });
+       $( "#amount" ).val( "Rs" + $( "#slider-range" ).slider( "values", 0 ) + "- Rs" + $( "#slider-range" ).slider( "values", 1 ) );
+    } );
+    </script>
+    <script type="text/javascript">
+        $( function() {
+       $( "#slider1" ).slider({
+         range: true,
+         min: 0.5,
+         max: 10,
+         values: [ 0.5, 2 ],
+         step:0.5,
+   
+         slide: function( event, ui ) {
+           $( "#amount1" ).val( "GB" + ui.values[ 0 ] + " - GB" + ui.values[ 1 ] );
+         }
+   
+       });
+        $( "#amount1" ).val( "GB" + $( "#slider1" ).slider( "values", 0 ) + "- GB" + $( "#slider1" ).slider( "values", 1 ) );
+     } );
+   </script>
+   <script type="text/javascript">
+    $( function() {
+   $( "#slider2" ).slider({
+     range: true,
+     min: 2010,
+     max: 2020,
+     values: [ 2010, 2020 ],
+     step:1,
+
+     slide: function( event, ui ) {
+       $( "#amount2" ).val( "Year" + ui.values[ 0 ] + " - Year" + ui.values[ 1 ] );
+     }
+
+   });
+    $( "#amount2" ).val( "Year" + $( "#slider2" ).slider( "values", 0 ) + "- Year" + $( "#slider2" ).slider( "values", 1 ) );
+ } );
+</script>
+   <style type="text/css">
+	#amount
+	{
+		border:0;
+		color: #f6931f;
+		font-weight: bold;
+	}
+		#slider-range
+		{
+			width: 400px;
+		}
+		#amount1
+	{
+		border:0;
+		color: #f6931f;
+		font-weight: bold;
+	}
+		#slider1
+		{
+			width: 400px;
+		}
+    #amount2
+	{
+		border:0;
+		color: #f6931f;
+		font-weight: bold;
+	}
+		#slider2
+		{
+			width: 400px;
+		}
+	</style> 
+    </head>
+    <body>
+      
+      <div class="container justify-content-center">
+        <table>
+          <tr>
+              <th>
+                <p>   
+                  <label>Price range:</label>
+                  <input type="text" id="amount">
+                </p>
+                <div id="slider-range"></div>
+               </th>
+           </tr>
+
+           <tr>
+            <th>
+              <p>   
+                <label>RAM:</label>
+                <input type="text" id="amount1">
+              </p>
+              <div id="slider1"></div>
+             </th>
+         </tr>
+        
+         <tr>
+           <th>
+             <p>
+               <label class="text-monospace">Year:</label>
+               <input type="text" id="amount2">
+             </p>
+             <div class="slider2"></div>
+           </th>
+         </tr>
+        </table>
+        
+        </div>
+        
+    </body>
+</html>
