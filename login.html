@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link href="bootstrap.min.css">
         <style type="text/css">
+        .navbar
+        {
+            background: rgb(238,174,202);
+              background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
             .navbar-nav
             {
                 list-style: none;
@@ -72,29 +77,38 @@
                 </div>
             </nav><br>
             <center>
-                <h2 class="display-5">Login Here</h2><br>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <h2 class="display-4">Login Here</h2><br>
+            <form>
 
-                <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <div class="form-group">
                     <label class="text-monospace" for="#usertext">Username</label>&nbsp;&nbsp;
-                    <input type="text" class="col-sm-4" id="usertext" placeholder="Enter Username" value="<?php echo $username; ?>"><br>
-                    <span class="help-block"><?php echo $username_err; ?></span>
+                    <input type="text" class="col-sm-4" id="usertext" placeholder="Enter Username"><br>
+                    <span class="help-block"></span>
                 </div>
-                <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <div class="form-group">
                     <label class="text-monospace" for="#passtext">Password</label>&nbsp;&nbsp;
                     <input type="password" class="col-sm-4" id="passtext" placeholder="Enter Password">
-                    <span class="help-block"><?php echo $password_err; ?></span>
+                    <span class="help-block"></span>
                 </div>
                 <div class="col-sm-10 ">
                 <button type="submit" class="btn btn-primary" value="login">login</button>
                 <button type="cancle" class="btn btn-secondary">cancle</button>
                 </div>
             </form>
-            <a class="hello" href="register.php">Create <span class="badge badge-primary">New</span> Account</a>
+            <a class="hello" href="registration.html">Create <span class="badge badge-primary">New</span> Account</a>
         </center><br>
         
           
-
+            <footer class="bg-dark text-white-50">
+                   <div class="container text-center text-monospace">
+                     Welcome to Our Site
+                   </div>
+                </footer>
+                <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+                  <div class="container text-center">
+                    <small>Create and Design By Wizard World</small>
+                  </div>
+                </footer>
 
         </div>
     </body>
